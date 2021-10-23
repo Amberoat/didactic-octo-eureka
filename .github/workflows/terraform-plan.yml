@@ -23,6 +23,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      -run: |
+            echo ${{ secrets.TF_API_TOKEN }}
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
