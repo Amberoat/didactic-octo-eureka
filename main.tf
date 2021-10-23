@@ -4,19 +4,28 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "default" {
-  name     = "${random_pet.prefix.id}-rg"
-  location = "West US 2"
-
-  tags = {
-    environment = "Demo"
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "rg-azure-tf"
+    storage_account_name = "saseaazuretf"
+    container_name       = "terraform-state"
+    key                  = "terraform.tfstate"
   }
 }
 
-resource "azurerm_kubernetes_cluster" "default" {
+resource "azurerm_resource_group" "playground_rg" {
+  name     = "${random_pet.prefix.id}-rg"
+  location = "Southeast Asia"
+
+  tags = {
+    environment = "playground"
+  }
+}
+
+resource "azurerm_kubernetes_cluster" "playground_aks" {
   name                = "${random_pet.prefix.id}-aks"
-  location            = azurerm_resource_group.default.location
-  resource_group_name = azurerm_resource_group.default.name
+  location            = azurerm_resource_group.playground_rg.location
+  resource_group_name = azurerm_resource_group.playground_rg.name
   dns_prefix          = "${random_pet.prefix.id}-k8s"
 
   default_node_pool {
@@ -36,6 +45,6 @@ resource "azurerm_kubernetes_cluster" "default" {
   }
 
   tags = {
-    environment = "Demo"
+    environment = "playground"
   }
 }

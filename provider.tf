@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     azurerm = {
-      source = "hashicorp/azurerm"
+      source = "Amberoat/didactic-octo-eureka"
       version = "~>2.0"
     }
   }
