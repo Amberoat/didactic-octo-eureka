@@ -1,3 +1,3 @@
 # didactic-octo-eureka
 playground
-AKS
+AKS for blockchain exploration
