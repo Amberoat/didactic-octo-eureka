@@ -1,9 +1,5 @@
 resource "random_pet" "prefix" {}
 
-provider "azurerm" {
-  features {}
-}
-
 resource "azurerm_resource_group" "playground_rg" {
   name     = "${random_pet.prefix.id}-rg"
   location = "Southeast Asia"

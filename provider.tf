@@ -1,5 +1,9 @@
+provider "azurerm" {
+  features {}
+}
+
 terraform {
-  backend "remote" {
+  backend "azurerm" {
     organization = "amberone"
     resource_group_name  = "rg-azure-tf"
     storage_account_name = "saseaazuretf"
