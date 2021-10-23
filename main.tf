@@ -17,8 +17,8 @@ resource "azurerm_kubernetes_cluster" "playground_aks" {
 
   default_node_pool {
     name            = "default"
-    node_count      = 4
-    vm_size         = "Standard_B1s"
+    node_count      = 2
+    vm_size         = "Standard_B2s"
     os_disk_size_gb = 30
   }
 

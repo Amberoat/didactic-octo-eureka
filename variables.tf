@@ -5,3 +5,7 @@ variable "client_id" {
 variable "client_secret" {
   description = "Azure service principal password"
 }
+
+variable "prefix" {
+  default = "goquorum"
+}
