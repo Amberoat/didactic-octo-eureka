@@ -1,8 +1,10 @@
 name: Terraform Apply
 
-on:
-  push:
-    branches: [ master ]
+on: 
+  push: 
+    branches: [ main ]
+  pull-request:
+    branches: [ main ]
 
 jobs:
   terraform:
