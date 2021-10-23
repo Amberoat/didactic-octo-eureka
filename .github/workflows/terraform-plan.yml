@@ -23,6 +23,3 @@ jobs:
 
       - name: Terraform Plan
         run: terraform plan
-      
-      - name: Terraform Format
-        run: terraform fmt -list=true -check=true
