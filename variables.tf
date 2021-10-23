@@ -1,7 +1,15 @@
-variable "appId" {
-  description = "Azure Kubernetes Service Cluster service principal"
+variable "subscription_id" {
+  description = "Azure subscription"
 }
 
-variable "password" {
-  description = "Azure Kubernetes Service Cluster password"
+variable "client_id" {
+  description = "Azure service principal id"
+}
+
+variable "client_secret" {
+  description = "Azure service principal password"
+}
+
+variable "tenant_id" {
+  description = "Azure tenant"
 }
