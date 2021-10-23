@@ -3,7 +3,7 @@ provider "azurerm" {
 }
 
 terraform {
-  backend "default" {
+  backend "azurerm" {
     resource_group_name  = "rg-azure-tf"
     storage_account_name = "saseaazuretf"
     container_name       = "terraform-state"
