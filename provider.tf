@@ -1,7 +1,3 @@
-provider "azurerm" {
-  features {}
-}
-
 terraform {
   backend "remote" {
     # resource_group_name  = "rg-azure-tf"
@@ -22,4 +18,8 @@ terraform {
       version = "~>2.0"
     }
   }
+}
+
+provider "azurerm" {
+  features {}
 }
